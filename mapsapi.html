@@ -12,20 +12,56 @@
     </style>
 </head>
 <body>
-<div id="map"></div>
 <script>
+
+
+    var lat;
+    var long;
+
+    function gelukt(position){
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        console.log(long);
+        console.log(lat);
+
+    }
+
+    function failed(){
+        alert("failed")
+    }
+    navigator.geolocation.getCurrentPosition(gelukt, failed,{
+        enableHighAccuracy: true,
+        maximumAge: 5000
+    });
+
+    var map;
+
+
+
     function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var uluru = {lat: 0, lng: 0 };
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: uluru
         });
+        var myLatLng = {lat: lat, lng: long};
+
+
         var marker = new google.maps.Marker({
             position: uluru,
             map: map
         });
+
     }
+
+    addEventListener("load", initMap)
+
+
+
+
 </script>
+<div id="map"></div>
+
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHk6-kVbEB5ETqa90VOzYmbwrFthItwuw&callback=initMap">
 </script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style type="text/css">
+        #myCanvas{
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <canvas id="myCanvas" width="500" height="200" style="border:3px solid #000000;"></canvas>
+        <script type="text/javascript">
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        var hue =0;
+        var light=0;
+
+        function drawcircle() {
+
+            hue++;
+            light++;
+            context.fillStyle = "hsl("+hue+", 100%,"+light+"%)";
+            context.moveTo(250, 0);
+            context.lineTo(280, 60);
+            context.lineTo(380, 60);
+            context.lineTo(290, 100);
+            context.lineTo(320, 170);
+            context.lineTo(250, 125);
+            context.lineTo(180, 170);
+            context.lineTo(210, 100);
+            context.lineTo(120, 60);
+            context.lineTo(220, 60);
+
+            context.closePath();
+            context.fill();
+
+
+            context.stroke();
+            console.log(hue);
+            console.log(light);
+            hue %=360;
+            light %= 100;
+
+        }
+
+
+        setInterval(drawcircle, 5);
+
+
+
+        </script>
+
+</div>
+
+</body>
+</html>
