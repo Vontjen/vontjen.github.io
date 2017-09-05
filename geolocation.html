@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Google Maps GeoLocator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        #mapCanvas {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        form {
+            width: 500px;
+            text-align: center;
+            background-color: red;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding: 25px;
+            margin-bottom: 50px;
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="support.js"></script>
+    <script type="text/javascript">
+        function findMe() {
+            navigator.geolocation.getCurrentPosition(geoLocationFound, geoLocationError, {
+                enableHighAccuracy: true
+            });
+        }
+
+        function geoLocationFound(position) {
+            realdolmen.setPosition(position.coords.latitude, position.coords.longitude);
+        }
+
+        function geoLocationError() {
+            alert("Unable to pinpoint location :(");
+        }
+    </script>
+</head>
+    <body>
+        <h1>Google Maps GeoLocator</h1>
+        <p>This example can be viewed in all major browsers!</p>
+        <form>
+            <input id="findMeButton" type="button" value="Find me!"/>
+        </form>
+
+        <div id="mapCanvas"/>
+    </body>
+</html>

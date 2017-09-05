@@ -23,7 +23,7 @@
         function drawcircle() {
 
             hue++;
-            light++;
+            light+=0.5;
             context.fillStyle = "hsl("+hue+", 100%,"+light+"%)";
             context.moveTo(250, 0);
             context.lineTo(280, 60);
