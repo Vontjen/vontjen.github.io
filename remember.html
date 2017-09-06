@@ -30,8 +30,8 @@
         } else {
             var div = document.getElementById("mydiv");
             if (localStorage.getItem("user")) {
-                var pastUserFirstName = JSON.parse(localStorage.getItem("user")).firstname;
-                var pastUserLastName = JSON.parse(localStorage.getItem("user")).lastname;
+                var pastUserFirstName = JSON.parse(localStorage.getItem("user")).firstName;
+                var pastUserLastName = JSON.parse(localStorage.getItem("user")).lastName;
                 console.log(pastUserFirstName);
                 console.log(pastUserLastName);
 
@@ -43,11 +43,11 @@
             document.addEventListener("submit", function (e) {
                 e.preventDefault();
                 var user = {
-                    firstname: document.getElementById("firstname").value,
-                    lastname: document.getElementById("lastname").value
+                    firstName: document.getElementById("firstname").value,
+                    lastName: document.getElementById("lastname").value
                 };
                 localStorage.setItem("user", JSON.stringify(user));
-                div.innerHTML = "<h3>Dank je voor uw input, " + user.firstname + "</h3>";
+                div.innerHTML = "<h3>Dank je voor uw input, " + user.firstName + "</h3>";
             })
         }
     </script>
