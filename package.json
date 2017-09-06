@@ -1,0 +1,29 @@
+{
+  "name": "vontjen.github.io",
+  "version": "1.0.0",
+  "description": "Education website to host on Github pages",
+  "main": "movieClasses.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vontjen/vontjen.github.io.git"
+  },
+  "keywords": [
+    "vdab",
+    "javascript",
+    "mao",
+    "jquerry",
+    "edu"
+  ],
+  "author": "Tjen Dekker",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Vontjen/vontjen.github.io/issues"
+  },
+  "homepage": "https://github.com/Vontjen/vontjen.github.io#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
