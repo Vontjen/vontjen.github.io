@@ -25,7 +25,8 @@
   "homepage": "https://github.com/Vontjen/vontjen.github.io#readme",
   "dependencies": {
     "d3": "^4.10.2",
-    "jquery": "^3.2.1",
+    "jquery": "^2.1.4",
+    "jquery-mobile": "^1.4.1",
     "moment": "^2.18.1"
   }
 }

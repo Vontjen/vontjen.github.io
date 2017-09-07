@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>jQuery</title>
+    <meta charset="utf-8">
+    <style>
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 0.2rem solid black;
+            padding: 0.5rem;
+            font-family: sans-serif;
+            text-align: center;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .adjacent {
+            background-color: blue;
+        }
+
+        .prime {
+            transition-property: background-color;
+            transition-duration: 1s;
+            background-color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="target"></div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+
+<script>
+
+    const COLS = 10;
+    const ROWS = 10;
+    let $t = $('<table>');
+    let $tr = $('<tr>');
+
+
+    for (let i = 1; i <= ROWS * COLS; i++) {
+        let $td = $('<td>').text(i);
+
+
+        if (i % ROWS === 1) {
+            $tr.appendTo($t);
+            $tr = $('<tr>');
+        }
+
+        if (i % 7 === 0) {
+            $td.prev().addClass('adjacent');
+            $td.addClass("prime");
+
+
+        }
+
+
+        $td.appendTo($tr);
+
+
+        //todo fadein maken voor de tabel na het laden van de pagina
+
+    }
+
+    let $prime = $('.prime');
+
+
+    $tr.appendTo($t);
+
+    $t.find(".prime").next().addClass("adjacent");
+    $t.find(".prime").prev().addClass("adjacent");
+
+
+    $('body').append($t);
+
+
+</script>
+
+
+</body>
+</html>
